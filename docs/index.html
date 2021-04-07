@@ -1,0 +1,79 @@
+<html>
+
+<head>
+  <title>PhpLiveForms::__construct</title>
+  <link rel="stylesheet" href="global.css">
+</head>
+
+<body>
+  <table style="width:95%;margin-left: auto;margin-right: auto;">
+    <tr>
+      <td style="width:100%; background-color: #F2F2F2; padding: 20px;">
+        <div class="maintitle">
+          <strong>PhpLiveForms::__construct</strong>
+        </div>
+        <p>Creates a <span class="func">PhpLiveForms</span> instance.</p>
+        <p>&nbsp;</p>
+
+        <div class="title">
+          <strong>Sintaxe</strong>
+        </div>
+        <br>
+        <div class="code">
+          <span class="const">public</span> <span class="func">PhpLiveForms::__construct</span> (
+          <span class="type">PhpLivePdo</span> <span class="var">&$PhpLivePdo</span> );
+        </div>
+        <p>&nbsp;</p>
+
+        <div class="title">
+          <strong>Parameters</strong>
+        </div>
+        <p><strong><span class="var">&$PhpLivePdo</span></strong></p>
+        <p class="ident">
+          The <a href="pdo.htm" class="func">PhpLivePdo</a> object reference. If the object are not
+          informed in construct, its must be informed in function
+          <a href="forms-form.htm" class="func">PhpLiveForms::Form</a>.
+        </p>
+        <p>&nbsp;</p>
+
+        <div class="title">
+          <strong>Return Values</strong>
+        </div>
+        <p>Returns a <span class="func">PhpLiveForms</span> object on success.</p>
+        <p>&nbsp;</p>
+
+        <div class="title">
+          <strong>Note</strong>
+        </div>
+        <p>
+          The <span class="func">PhpLiveForms</span> system use the
+          <a href="https://www.php.net/manual/en/function.session-name" target="_blank" class="func">session_name()</a>
+          to identify the forms as "Site" parameter.
+        </p>
+        <p>&nbsp;</p>
+
+        <div class="title">
+          <strong>Dependencies</strong>
+        </div>
+        <p>- PHP 7.4;</p>
+        <p>- <a href="pdo.htm" class="func">PhpLivePdo</a> library;</p>
+        <p>&nbsp;</p>
+
+        <div class="title">
+          <strong>Examples</strong>
+        </div>
+        <br>
+        <div class="code">
+          <span class="var">$Forms</span> = <span class="type">new</span> <span class="func">PhpLiveForms</span>(
+          <span class="var">$PDO</span>);
+        </div>
+        <p>&nbsp;</p>
+      </td>
+      <td style="color: #ccc; font-size: 18px; vertical-align: top;">
+        <iframe src="menu-forms.htm" class="menu2"></iframe>
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>
