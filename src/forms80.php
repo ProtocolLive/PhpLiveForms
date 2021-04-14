@@ -1,7 +1,7 @@
 <?php
+// 2021.04.14.00
 // Protocol Corporation Ltda.
 // https://github.com/ProtocolLive/PhpLive/
-// Version 2020.11.27.02
 
 class PhpLiveForms{
   public function __construct(private PhpLivePdo &$PhpLivePdo){
@@ -110,7 +110,7 @@ class PhpLiveForms{
             return false;
           endif;
           print $field['label'] . ':<br>';
-          print '<select name="' . $field['name'] . '"';
+          print '<span id="Ajax_' . $field['name'] . '"><select name="' . $field['name'] . '"';
         elseif($field['type'] === 'checkbox'):
           print "<p>";
           if(str_contains($field['class'], 'switch;')):
@@ -249,7 +249,7 @@ class PhpLiveForms{
       //close
       {
         if($field['type'] === 'select'):
-          print '</select><br>';
+          print '</select></span><br>';
         elseif($field['type'] === 'textarea'):
           print '</textarea><br>';
         elseif($field['type'] === 'button'):
