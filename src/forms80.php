@@ -4,8 +4,9 @@
 // https://github.com/ProtocolLive/PhpLive/
 
 class PhpLiveForms{
-  public function __construct(private PhpLivePdo &$PhpLivePdo){
-  }
+  public function __construct(
+    private PhpLivePdo &$PhpLivePdo
+  ){}
 
   private function PhpError(int $Type):bool{
     return (ini_get('error_reporting') & $Type) === $Type;
@@ -40,12 +41,6 @@ class PhpLiveForms{
       $site[0] = 'site=:site';
       $site[1] = [
         [':site', $Site, PdoStr],
-        [':form', $Form, PdoStr]
-      ];
-    elseif(session_name() !== 'PHPSESSID'):
-      $site[0] = 'site=:site';
-      $site[1] = [
-        [':site', session_name(), PdoStr],
         [':form', $Form, PdoStr]
       ];
     else:

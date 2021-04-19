@@ -1,5 +1,5 @@
 <?php
-// 2021.04.14.00
+// 2021.04.19.00
 // Protocol Corporation Ltda.
 // https://github.com/ProtocolLive/PhpLive/
 
@@ -35,12 +35,6 @@ class PhpLiveForms{
       $site[0] = 'site=:site';
       $site[1] = [
         [':site', $Options['Site'], PdoStr],
-        [':form', $Options['Form'], PdoStr]
-      ];
-    elseif(session_name() !== 'PHPSESSID'):
-      $site[0] = 'site=:site';
-      $site[1] = [
-        [':site', session_name(), PdoStr],
         [':form', $Options['Form'], PdoStr]
       ];
     else:
