@@ -1,5 +1,5 @@
 <?php
-// 2021.04.14.00
+// 2021.04.14.01
 // Protocol Corporation Ltda.
 // https://github.com/ProtocolLive/PhpLive/
 
@@ -32,10 +32,6 @@ class PhpLiveForms{
     bool $PdoDebug = false,
     bool $AjaxAppend = false
   ):bool{
-    if($this->PhpLivePdo === null):
-      return false;
-    endif;
-
     // Get site
     if($Site !== null):
       $site[0] = 'site=:site';

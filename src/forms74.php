@@ -1,5 +1,5 @@
 <?php
-// 2021.04.19.00
+// 2021.04.19.01
 // Protocol Corporation Ltda.
 // https://github.com/ProtocolLive/PhpLive/
 
@@ -24,9 +24,6 @@ class PhpLiveForms{
   }
 
   public function Form(array $Options):bool{
-    if($this->PhpLivePdo === null):
-      return false;
-    endif;
     $Options['PdoDebug'] ??= false;
     $Options['AjaxAppend'] ??= false;
 
