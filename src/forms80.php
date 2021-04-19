@@ -1,5 +1,5 @@
 <?php
-// 2021.04.14.01
+// 2021.04.14.02
 // Protocol Corporation Ltda.
 // https://github.com/ProtocolLive/PhpLive/
 
@@ -29,8 +29,7 @@ class PhpLiveForms{
     array $Selects = [],
     array $Hiddens = [],
     array $Data = [],
-    bool $PdoDebug = false,
-    bool $AjaxAppend = false
+    bool $PdoDebug = false
   ):bool{
     // Get site
     if($Site !== null):
@@ -162,9 +161,6 @@ class PhpLiveForms{
             "'" . $Place . "'," .
             "'" . $Form . "'"
           ;
-          if($AjaxAppend === true):
-            $onclick .= ',' . $AjaxAppend;
-          endif;
           $onclick .= ');';
         endif;
         if($field['js_event'] !== null and $field['js_event'] === 'onclick'):

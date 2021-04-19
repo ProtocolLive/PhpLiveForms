@@ -1,5 +1,5 @@
 <?php
-// 2021.04.19.01
+// 2021.04.19.02
 // Protocol Corporation Ltda.
 // https://github.com/ProtocolLive/PhpLive/
 
@@ -157,9 +157,6 @@ class PhpLiveForms{
             "'" . $Options['Place'] . "'," .
             "'" . $Options['Form'] . "'"
           ;
-          if($Options['AjaxAppend'] === true):
-            $onclick .= ',' . $Options['AjaxAppend'];
-          endif;
           $onclick .= ');';
         endif;
         if($field['js_event'] !== null and $field['js_event'] === 'onclick'):
