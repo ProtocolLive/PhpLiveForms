@@ -66,7 +66,7 @@
           <span class="ident">[<span class="const">1</span>, <span class="string">'Yes'</span>],</span><br>
           <span class="ident">[<span class="const">0</span>, <span class="string">'No'</span>]</span><br>
           ];<br>
-          <span class="var">$citys</span> = <span class="func">$PDO->Run</span>("<br>
+          <span class="var">$citys</span> = <span class="func">$PDO->Run</span>('<br>
           <span class="string">
             <p class="ident">
               select city_id,city<br>
@@ -74,8 +74,8 @@
               order by city
             </p>
           </span>
-          ");<br>
-          <span class="var">$data</span> = <span class="func">$PDO->Run</span>("<br>
+          ');<br>
+          <span class="var">$data</span> = <span class="func">$PDO->Run</span>('<br>
           <span class="string">
             <p class="ident">
               select *<br>
@@ -83,9 +83,9 @@
               where user_id=?
             </p>
           </span>
-          ",[<br>
+          ',[<br>
           <span class="ident">
-            [<span class="const">1</span>, <span class="var">$_GET</span>[<span class="string">"id"</span>],
+            [<span class="const">1</span>, <span class="var">$_GET</span>[<span class="string">'id'</span>],
             <span class="const">PdoInt</span>]
           </span><br>
           ]);<br>
