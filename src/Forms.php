@@ -1,5 +1,5 @@
 <?php
-//2021.05.05.00
+//2021.05.05.01
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/PhpLive/
 
@@ -37,7 +37,7 @@ class PhpLiveForms{
       select *
       from forms_forms
       where ' . $where['Query'],
-      $where['Params'],
+      $where['Tokens'],
       ['Debug' => $Options['PdoDebug']]
     );
     // check if form exist
