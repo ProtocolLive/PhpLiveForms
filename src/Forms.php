@@ -1,5 +1,5 @@
 <?php
-//2021.06.14.00
+//2021.06.14.01
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/PhpLive/
 
@@ -75,7 +75,7 @@ class PhpLiveForms{
       //Opening element
       {
         if($field['type'] === 'submit'):
-          print '<p><input type="submit"';
+          print '<p><button';
         elseif($field['type'] === 'select'):
           // Check if select data exist
           if(isset($Options['Selects'][$field['name']]) === false):
@@ -143,13 +143,17 @@ class PhpLiveForms{
 
         //JS event onclick to submit button
         $onclick = '';
-        if($field['type'] === 'submit' and $form[0]['method'] === 'ajax'):
-          $onclick = 'Ajax(' .
-            "'" . $Options['Page'] . "'," .
-            "'" . $Options['Place'] . "'," .
-            "'" . $Options['Form'] . "'"
-          ;
-          $onclick .= ');';
+        if($field['type'] === 'submit'):
+          if($form[0]['method'] === 'ajax'):
+            $onclick = 'Ajax(' .
+              "'" . $Options['Page'] . "'," .
+              "'" . $Options['Place'] . "'," .
+              "'" . $Options['Form'] . "'"
+            ;
+            $onclick .= ');';
+          else:
+            $onclick = 'document.getElementById("' . $form[0]['form'] . '").submit();';
+          endif;
         endif;
         if($field['js_event'] !== null and $field['js_event'] === 'onclick'):
           $onclick .= $field['js_code'];
@@ -181,9 +185,6 @@ class PhpLiveForms{
           elseif($field['default'] !== null):
             print ' value="' . $field['default'] . '"';
           endif;
-        elseif($field['type'] === 'button'
-        or $field['type'] === 'submit'):
-          print ' value="' . $field['label'] . '"';
         endif;
         if($field['type'] === 'checkbox'):
           print '>';
@@ -215,7 +216,11 @@ class PhpLiveForms{
             endif;
             print '>' . $select[1] . '</option>';
           endforeach;
-
+        elseif($field['type'] === 'button' or $field['type'] === 'submit'):
+          if($field['icon'] !== null):
+            print '<img src="' . $field['icon'] . '" alt="' . $field['label'] . '"> ';
+          endif;
+          print $field['label'];
         elseif($field['type'] === 'textarea'):
           if(isset($Options['Data'])):
             print $Options['Data'][$field['name']];
@@ -232,7 +237,9 @@ class PhpLiveForms{
           print '</select></span></label><br>';
         elseif($field['type'] === 'textarea'):
           print '</textarea></label><br>';
-        elseif($field['type'] === 'button' or $field['type'] === 'checkbox'):
+        elseif($field['type'] === 'button' or $field['type'] === 'submit'):
+          print '</button></p>';
+        elseif($field['type'] === 'checkbox'):
           print '</p>';
         endif;
       }
