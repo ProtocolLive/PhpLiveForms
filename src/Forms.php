@@ -1,5 +1,5 @@
 <?php
-//2021.05.05.01
+//2021.06.14.00
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/PhpLive/
 
@@ -26,7 +26,6 @@ class PhpLiveForms{
   public function Form(array $Options):bool{
     $Options['PdoDebug'] ??= false;
     $Options['AjaxAppend'] ??= false;
-
     // Get site
     $where = $this->PhpLivePdo->BuildWhere([
       ['site', $Options['Site'], PdoStr],
@@ -192,6 +191,8 @@ class PhpLiveForms{
             print '<span class="slider"></span></label>';
           endif;
           print ' ' . $field['label'];
+        elseif($field['type'] === 'textarea'):
+          print '>';
         else:
           print '></label>';
         endif;
