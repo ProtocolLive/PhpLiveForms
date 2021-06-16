@@ -1,5 +1,5 @@
 <?php
-//2021.06.14.01
+//2021.06.16.00
 //Protocol Corporation Ltda.
 //https://github.com/ProtocolLive/PhpLive/
 
@@ -106,7 +106,7 @@ class PhpLiveForms{
           print '<label>' . $field['label'] . ':<br>';
           print '<textarea name="' . $field['name'] . '"';
         elseif($field['type'] === 'button'):
-          print '<p><input type="button"';
+          print '<p><button';
         else:
           print '<label>' . $field['label'] . ':<br>';
           print '<input type="' . $field['type'] . '" name="' . $field['name'] . '"';
